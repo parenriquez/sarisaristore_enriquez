@@ -1,0 +1,36 @@
+{% extends 'products/master.html'%} {% load crispy_forms_tags%} {% load static
+%} {% block content%}
+<br />
+
+<div class="container">
+	<form method="POST" action="">
+		<h1 class="text-center">SARI-SARI STORE</h1>
+		<br />
+		{% csrf_token %} {{newform | crispy}}
+		<input
+			value="Confirm"
+			type="submit"
+			class="btn btn-secondary btn"
+			type="button"
+		/>
+	</form>
+</div>
+{% endblock %}
+
+<!--
+<html>
+    <body>
+        <h1>Add Member</h1>
+        <form action="addrecord/" method="post">
+            {% csrf_token %}
+            First Name:<br>
+            <input name="first">
+        </br>
+        Last Name:<br>
+        <input name="last">
+    </br>
+    <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
+-->

@@ -1,0 +1,55 @@
+{% extends 'products/master.html'%} {% block content%}
+<br></br>
+
+<div class = "container">
+<h1 class = "text-center">KABUUANG KITA NG SARI-SARI STORE</h1><br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Kabuuang Bayad na Tinanggap</th>
+        <th scope="col">Kabuuan ng Sukli</th>
+        <th scope="col">Kabuuang Kita</th>
+      </tr>
+    </thead>  
+    <tbody>
+      <tr>    
+        <td>₱{{total}}</td>
+        <td>₱{{change}}</td>
+        <td>₱{{net}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br></br>
+
+<div class = "container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Pangalang ng Bumili</th>
+        <th scope="col">Petsa</th>
+        <th scope="col">Binili</th>
+        <th scope="col">Dami</th>
+        <th scope="col">Presyo per Piraso(₱)</th>
+        <th scope="col">Kabuuang Halaga</th>
+        <th scope="col">Halaga ng Binayad</th>
+        <th scope="col">Sukli</th>
+      </tr>
+    </thead>
+    {% for sale in sales %}
+    <tbody>
+      <tr>    
+        <td>{{sale.issued_to | title}}</td>
+        <td>{{sale.date_of_purchase}}</td>
+        <td>{{sale.item | title}}</td>
+        <td>{{sale.quantity}}</td>
+        <td>₱{{sale.unit_price}}</td>
+        <td>₱{{sale.get_total}}</td>
+        <td>₱{{sale.amount_received}}</td>
+        <td>₱{{sale.get_change}}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+{% endblock%}

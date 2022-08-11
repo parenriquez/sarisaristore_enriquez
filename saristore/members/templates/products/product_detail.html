@@ -1,0 +1,30 @@
+{% extends 'products/master.html'%} {% block content%}
+<br></br>
+
+<div class = "container">
+    <a href="{% url 'issue_item' product.id %}" ><input type="submit" value="Order {{product.item_name}}" class="btn btn-secondary" btn type="button"/></a>
+    <a href="{% url 'update_stock' product.id %}" ><input type= "submit" value="Update {{product.item_name}}" class="btn btn-secondary btn" type="button"/></a>
+    <a href="{% url 'delete_stock' product.id %}" ><input type= "submit" value="Delete {{product.item_name}}" class="btn btn-secondary btn" type="button"/></a>
+    <a href="{% url 'add_new_stock' %}" ><input type= "submit" value="Add New Item" class="btn btn-secondary btn" type="button"/></a>
+</div>
+
+<br></br>
+<div class = "container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Paninda</th>
+        <th scope="col">Dami</th>
+        <th scope="col">Presyo Per Piraso(₱)</th>   
+      </tr>
+    </thead>
+    <tbody>
+      <tr>    
+        <td>{{product.item_name}}</td>
+        <td>{{product.total_quantity}}</td>
+        <td>₱{{product.unit_price}}</td>   
+      </tr>
+    </tbody>  
+  </table>
+</div>
+{% endblock%}

@@ -1,0 +1,32 @@
+{% extends 'products/master.html'%} {% block content%} <br /><br />
+<div class="container">
+	<h1 class="card-header text-center">MGA RESIBO</h1>
+	<br />
+	{% for sale in sales %}
+	<div class="card">
+		<div class="card-body">
+			<h3 class="card-title">
+				Pangalan ng Bumili : {{sale.issued_to | title}}
+			</h3>
+			<h6 class="card-text">Binili : {{sale.item}}</h6>
+			<h6 class="card-text">Petsa : {{sale.date_of_purchase}}</h6>
+			<h6 class="card-text">Halaga ng Binayad: ₱{{ sale.amount_received }}</h6>
+			<h6 class="card-text">Dami: {{sale.quantity }}</h6>
+			<h2>Kabuuang Presyo : ₱{{ sale.get_total }}</h2>
+			<div style="flex: 1">
+				<h6 class="card-text">Kabuuang Sukli: ₱{{ sale.get_change }}</h6>
+				<a href="{% url 'receipt_detail' sale.id %}">
+					<input
+						type="submit"
+						value="Final Receipt"
+						class="btn btn-danger"
+						type="button"
+					/>
+				</a>
+			</div>
+		</div>
+	</div>
+	<br />
+	{% endfor %}
+</div>
+{% endblock %}
