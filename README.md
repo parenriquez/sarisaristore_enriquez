@@ -36,7 +36,8 @@ http://127.0.0.1:8000/add_new_stock/
 User can also view all the sales made by the Tindahan by navigating to:
 http://127.0.0.1:8000/all_sales/
 
-Note: Make sure to install the modules inside [requirements.txt](./requirements.txt).
-Run `pip install - r requirements.txt`
+Make sure to install the modules inside [requirements.txt](./requirements.txt). To do this, run:
+
+`pip install - r requirements.txt`
 
 #### **Thank you!**
