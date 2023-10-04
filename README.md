@@ -1,8 +1,6 @@
-#August 10, 2022
-#Final Assessment in Fundamentals of Python and Django
-#Sari-sari Store App
-#A program depicting the everyday Tindahan of Filipinos.
-#Paul Aldrin Enriquez, 22-6444
+#### **Sari-sari Store App**
+
+A program depicting the everyday Tindahan of Filipinos.
 
 User will enter through the http://127.0.0.1:8000/home/, and here
 he can see all the current Paninda of the Sari-sari Store.
